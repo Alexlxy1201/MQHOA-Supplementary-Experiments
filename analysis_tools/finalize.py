@@ -117,7 +117,7 @@ def main():
               "analysis_type":"presentation from completed CSV/JSONL; no new optimisation",
               "inputs":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (out/"per_instance_summary.csv",out/"paired_instance_tests.csv",out/"synthetic_relative_comparison.csv")}}
     (out/"final_presentation_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"finalised":str(out),"new_distribution_figures":3},ensure_ascii=False))
+    print(json.dumps({"finalised":str(out),"new_distribution_figures":len(cases)},ensure_ascii=False))
 
 
 if __name__=="__main__":
