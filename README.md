@@ -26,6 +26,8 @@ No original script is imported or executed. Archived DAG constants are read with
 | Sequential runtime | Same 14 instances; 12 stochastic configurations × 5 seeds; HEFT 30 times | 1,260 |
 | Total | Full MQHOA runs are shared across the three analysis blocks | 4,794 |
 
+The standalone synthetic-only quick start has 2,892 quality runs, 1,080 timing runs and 160 tuning runs (4,132 total). The full matrix above additionally includes the two optional archived DAGs.
+
 The seven MQHOA settings are baseline k=4,m=5,lambda=1.3 plus k=2/6, m=3/8 and lambda=1.2/1.5. Only one parameter changes at a time. No setting is selected after inspecting evaluation results.
 
 Synthetic DAGs are generic workload supplements, not measured optical workloads or Alibaba traces. No external dataset is downloaded. Default pool sizes are M=2,000 for n<50 and M=20,000 otherwise, fixed across methods within an instance. Every fitness call, including initialisation and duplicate candidates, consumes the same evaluation budget.
@@ -76,3 +78,9 @@ The public source package contains only the new code, tests, configurations and 
 - Topcuoglu, Hariri and Wu (2002), *Performance-effective and low-complexity task scheduling for heterogeneous computing*, [doi:10.1109/71.993206](https://doi.org/10.1109/71.993206).
 - SciPy 1.15.3: [paired t tests](https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.ttest_rel.html), [Wilcoxon signed-rank tests](https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.stats.wilcoxon.html).
 - Statistical workflow assistance used the `statistical-analysis` skill. Its procedural source is Kassis, T., Agarwal, V., He, Y., Patel, D., and Brueckner, A. M. (2026), *Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents*, [doi:10.48550/arXiv.2609.00065](https://doi.org/10.48550/arXiv.2609.00065). This acknowledgement concerns workflow assistance, not scientific validation of MQHOA.
+
+## Final presentation tools
+
+After the completed campaign analysis, `python analysis_tools/finalize.py runs/five-v1` adds a Chinese summary and raw distribution figures. A completed quality matrix can also be summarised while the separate timing phase continues using `python analysis_tools/quality_preview.py runs/five-v1 --config configs/synthetic_only.json`; this writes a provisional quality-only folder. Both tools read recorded results and do not run optimisation.
+
+For the fixed-scale control, the Hamming statistic remains a logged diagnostic; it does not drive sampling or scale updates. Runtime includes that common diagnostic instrumentation.
