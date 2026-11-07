@@ -20,7 +20,9 @@ Relative differences use `(mean MQHOA − mean comparator) / mean comparator` wi
 
 Per-run solver timing starts after the common instance deserialisation and adjacency construction. It includes candidate-pool generation and hashing where applicable, the search or heuristic, fitness evaluation, and final schedule validation. Python startup, common input loading and log-file writing are outside this boundary. `t_pool + t_eval + t_search = t_total`, up to floating-point rounding.
 
-All dedicated timing rows come from the 4060 computer with a single Python worker. They are compared within that host. Quality data come from the 3060 computer; its parallel-batch times are retained in raw logs for provenance and are excluded from the dedicated timing summaries.
+Dedicated timing comparisons use a complete, single-host matrix with one Python worker. Quality data come from the 3060 computer; its parallel-batch times are retained in raw logs for provenance and are excluded from the dedicated timing summaries.
+
+The initial 4060 timing block showed a speed transition on the first archived instance. A complete 90-condition warmed recheck failed its predeclared stability limit (ratio 2.034 versus limit 1.5). Both attempts are retained separately. The replacement protocol measures the entire timing matrix on the 3060 computer, fixes only the new Python process to logical CPU 2, warms it for 60 seconds, interleaves conditions with seed 20261108, and checks a fixed-input timing sentinel throughout. Final timing selection requires the complete matrix and a maximum/minimum sentinel ratio at most 1.5; individual fast rows are never selected across attempts.
 
 ## Scope
 

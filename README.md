@@ -84,3 +84,7 @@ The public source package contains only the new code, tests, configurations and 
 After the completed campaign analysis, `python analysis_tools/finalize.py runs/five-v1` adds a Chinese summary and raw distribution figures. A completed quality matrix can also be summarised while the separate timing phase continues using `python analysis_tools/quality_preview.py runs/five-v1 --config configs/synthetic_only.json`; this writes a provisional quality-only folder. Both tools read recorded results and do not run optimisation.
 
 For the fixed-scale control, the Hamming statistic remains a logged diagnostic; it does not drive sampling or scale updates. Runtime includes that common diagnostic instrumentation.
+
+## Recorded Windows timing correction
+
+The recorded full 14-instance campaign identified an initial speed transition on the 4060 host and retained both its original timing and a failed stability recheck. `analysis_tools/pinned_timing.py` implements the complete 1,260-condition timing matrix on one allowed logical CPU of the new Python process, with 60 seconds of warmup, seeded interleaving and repeated fixed-input controls. `analysis_tools/assemble_fixed_timing.py` creates a separate final analysis view only for a complete matrix passing the 1.5 stability-ratio limit. Original attempts remain unchanged. These wrappers target the recorded full campaign (including the two optional archived DAGs); their receipts record the exact measurement protocol and source hashes.
