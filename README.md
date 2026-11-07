@@ -32,25 +32,25 @@ Synthetic DAGs are generic workload supplements, not measured optical workloads 
 
 ## Run on an experiment computer
 
-Python 3.10–3.12; no GPU is required. Use a dedicated virtual environment, then from this folder:
+Python 3.10–3.12; no GPU is required. The public quick start below uses the self-contained synthetic configuration and needs no private archive. Use a dedicated virtual environment, then from this folder:
 
 ```bash
 python -m pip install -r requirements.txt
-python -m mqhoa_supp prepare --out runs/five-v1
-python -m mqhoa_supp plan --out runs/five-v1
-python -m mqhoa_supp preflight --out runs/five-v1
+python -m mqhoa_supp prepare --config configs/synthetic_only.json --out runs/five-v1
+python -m mqhoa_supp plan --config configs/synthetic_only.json --out runs/five-v1
+python -m mqhoa_supp preflight --config configs/synthetic_only.json --out runs/five-v1
 ```
 
 Preflight runs the new implementation's tests and short 500-evaluation pilots, then reports a measured serial time estimate. Inspect that estimate before launching long stages. It never runs an archived script or enforces audit-derived optimum values.
 
 ```bash
-python -m mqhoa_supp tune --out runs/five-v1 --workers 2
-python -m mqhoa_supp freeze --out runs/five-v1
+python -m mqhoa_supp tune --config configs/synthetic_only.json --out runs/five-v1 --workers 2
+python -m mqhoa_supp freeze --config configs/synthetic_only.json --out runs/five-v1
 # Preserve frozen_defaults.json (including its hash/time) before evaluation.
-python -m mqhoa_supp run --out runs/five-v1 --workers 2
+python -m mqhoa_supp run --config configs/synthetic_only.json --out runs/five-v1 --workers 2
 # Run timing separately with no competing experimental batch on the machine:
-python -m mqhoa_supp timing --out runs/five-v1 --workers 1
-python -m mqhoa_supp analyze --out runs/five-v1
+python -m mqhoa_supp timing --config configs/synthetic_only.json --out runs/five-v1 --workers 1
+python -m mqhoa_supp analyze --config configs/synthetic_only.json --out runs/five-v1
 ```
 
 For two computers, prepare and pass preflight on both, tune/freeze once, copy the identical `frozen_defaults.json` to the other computer, and run evaluation with `--shard-count 2 --shard-index 0` and `--shard-count 2 --shard-index 1`. Collect the two evaluation log files into the same results folder. Run all timing comparisons sequentially on just one machine. Analysis requires the complete unique matrix and a single shared frozen configuration.
