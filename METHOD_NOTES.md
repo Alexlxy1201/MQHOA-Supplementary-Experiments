@@ -22,7 +22,7 @@ Per-run solver timing starts after the common instance deserialisation and adjac
 
 Dedicated timing comparisons use a complete, single-host matrix with one Python worker. Quality data come from the 3060 computer; its parallel-batch times are retained in raw logs for provenance and are excluded from the dedicated timing summaries.
 
-The initial 4060 timing block showed a speed transition on the first archived instance. A complete 90-condition warmed recheck failed its predeclared stability limit (ratio 2.034 versus limit 1.5). Both attempts are retained separately. The replacement protocol measures the entire timing matrix on the 3060 computer, fixes only the new Python process to logical CPU 2, warms it for 60 seconds, interleaves conditions with seed 20261108, and checks a fixed-input timing sentinel throughout. Final timing selection requires the complete matrix and a maximum/minimum sentinel ratio at most 1.5; individual fast rows are never selected across attempts.
+The initial 4060 timing block showed a speed transition on the first archived instance. A complete 90-condition warmed recheck failed its predeclared stability limit (ratio 2.034 versus limit 1.5). Both attempts are retained separately. The selected replacement measured the entire 1,260-condition timing matrix on the 3060 computer, fixed only the new Python process to logical CPU 2, warmed it for 60 seconds, interleaved conditions with seed 20261108, and checked a fixed-input timing sentinel throughout. All 14 sentinel groups passed, with maximum/minimum median time 1.089. Individual fast rows were never selected across attempts. Warmup and sentinel calls have separate logs and counts.
 
 ## Scope
 

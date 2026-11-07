@@ -4,7 +4,7 @@ This separate implementation adds five supplementary deliverables: a same-encodi
 
 ## Status
 
-Source preparation is complete. Execution status and results are recorded separately in `runs/` and the eventual results release. Code availability alone is not evidence that an experiment passed or a method improved.
+The recorded campaign completed on 2026-11-08: 160 tuning, 3,374 quality and 1,260 selected stable timing runs. See [STATUS.md](STATUS.md) and [METHOD_NOTES.md](METHOD_NOTES.md) for validation and measurement details. This public repository provides source and reproduction procedures; the authors retain the complete report/data archive in their project repository.
 
 ## Model and methods
 

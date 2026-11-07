@@ -1,18 +1,7 @@
-# Five supplementary tasks
+# Recorded campaign validation
 
-## Material Passport
+The five-task supplementary campaign completed on 2026-11-08. The selected matrix contains 160 tuning, 3,374 quality and 1,260 dedicated timing runs. Core implementation tests passed 14/14, including 300 reference-evaluator comparisons. Quality solutions and budgets were independently checked.
 
-- Mode: implement + run + analyze
-- Scope: five supplementary tasks, preserving all historical materials
-- Current stage: source preparation; remote execution pending
-- Results: none claimed by this status document
+Final timing uses one logical CPU (CPU 2) of the 3060 host, with 60 seconds of warmup and seeded interleaving. All 14 fixed-input stability groups passed: maximum/minimum median time 1.089, below the 1.5 limit. Earlier 4060 timing and a failed stability recheck were retained separately.
 
-| Task | Code | Execution evidence required |
-|---|---|---|
-| PSO comparison | methods.py, protocol.py | Complete comparison rows and comparison/convergence figures |
-| Parameter sensitivity | seven one-factor MQHOA settings | Complete setting rows and quality/runtime sensitivity figure |
-| Ablations | NoHamming, DirectRandom, RandomPool | Complete ablation rows and convergence/statistics |
-| Statistical analysis | statistics.py, plots.py, report.py | Validated full logs, CIs, corrected tests, effect sizes |
-| Public source/reproduction | README, pinned requirements, tests | Verified accessible code-only repository URL |
-
-No historical file is overwritten. The supplementary package does not launch experiments on the Mac; remote host and process receipts document where execution occurs.
+This public repository contains the new source and reproduction procedures. Full report/data archives are retained by the authors in their existing project repository. The standalone synthetic configuration remains usable without the optional original archive.
