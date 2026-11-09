@@ -1,0 +1,8 @@
+# Source-driven amendment draft (before any formal quality run)
+The official frozen primary SESE filter yields20 eligible jobs (small10,medium10,large0). Preserve those20 and the missing primary large stratum. A separately frozen source-only secondary coverage check may add up to10 lexicographically first numeric-connected80–100-node jobs with multiple sources/sinks, pinning every root and sink without dummy nodes. Selection never consults algorithm outcomes.
+
+Primary20 jobs retain the main MQHOA-vsPSO/HEFT/FlexDO three-comparison Holm family. Any secondary large cohort is analyzed separately and descriptively; combined plots are labeled as two cohorts, never30 cases satisfying the original primary criteria. DirectGeometry remains descriptive outside the main family.
+
+Record topologySHA from n and sorted numeric-index directed edges, weighted graphSHA from exact supplied durations/weighted edges/pinned tasks, and full instanceSHA. Identical topology hashes define duplicate-layout groups (no full isomorphism clustering). Keep all job-level primary results and add an equal-weight topology-group mean relative-difference sensitivity, with bootstrap intervals only; do not promote a small group count to a strong p claim. Job wall spans may share a cluster environment, so refer to selected trace jobs, not random independent topologies or a representative population.
+
+The primary pilot is already retained. No search kernel or parameter will change in this amendment; final code freeze will include an AST/kernel parity check against the pre-pilot source snapshot, and unchanged old method/FlexDO/DirectGeometry file hashes. Secondary pilot, if required, is a new source-coverage measurement, not a retry of the successful primary pilot.

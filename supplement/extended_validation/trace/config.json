@@ -1,0 +1,55 @@
+{
+  "protocol": "new-trace-validation-v1",
+  "input_relative": "supplement/runs/extended_trace_20261109/extraction_v1",
+  "official_sha256": "7c4b32361bd1ec2083647a8f52a6854a03bc125ca5c202652316c499fbf978c6",
+  "budget_evals": 10000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "stochastic_methods": [
+    "MQHOA",
+    "PSO",
+    "DirectGeometryMQHOA"
+  ],
+  "deterministic_methods": [
+    "HEFT",
+    "FlexDO-N2"
+  ],
+  "main_opponents": [
+    "PSO",
+    "HEFT",
+    "FlexDO-N2"
+  ],
+  "workers": 2,
+  "shuffle_seed": 2026110910,
+  "bootstrap_seed": 2026110911,
+  "bootstrap_samples": 10000,
+  "monte_carlo_sign_flips": 100000,
+  "alpha": 0.05,
+  "synthetic_speedup": 3,
+  "synthetic_ccr": 1,
+  "runtime_interpretation": "parallel quality-run wall time; no dedicated speed comparison",
+  "secondary_input_relative": "supplement/runs/extended_trace_20261109/source/projection_audit_v1/secondary_large_instances",
+  "secondary_report_relative": "supplement/results/20261109_provenance_actual_v1/projection_secondary_large_coverage.json",
+  "primary_main_family_only": true,
+  "topology_sensitivity": "equal-weight labeled-topology group mean differences, descriptive bootstrap CI only"
+}

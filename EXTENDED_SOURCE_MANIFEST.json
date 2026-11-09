@@ -1,6 +1,14 @@
 {
-  "kind": "source-only",
+  "kind": "source-settings-and-job-hash-metadata-only",
   "files": [
+    {
+      "path": "EXTENDED_VALIDATION_20261109.md",
+      "sha256": "0a5c4b5cf483768a45d950ceb2b51d952339100e9ea7cc5e614c41d995334855"
+    },
+    {
+      "path": "TRACE_SELECTED_JOBS_20261109.json",
+      "sha256": "c00d745cf836127aca57d3405065e984126ca5a4a48a90fe642bea9ad69facd9"
+    },
     {
       "path": "supplement/RECENT_BASELINE_PLAN.md",
       "sha256": "6e557775fd7c2ac56b1d8af15951139debd30c008dea5dae9ec9556217613ede"
@@ -48,6 +56,10 @@
     {
       "path": "supplement/extended_validation/analysis_templates/scenarios_analyze.py",
       "sha256": "2f297ddffa9185552c7d567b42181c40ae2e703e64a600cad30c020462315d77"
+    },
+    {
+      "path": "supplement/extended_validation/extract_new_trace.py",
+      "sha256": "e1d5246e372e06120b10593da8fbd0b3e4a85919469961c266045d43ed1f1418"
     },
     {
       "path": "supplement/extended_validation/online_lossy/AMENDMENTS.md",
@@ -142,8 +154,28 @@
       "sha256": "471a8731ea9dcb5c0512b1c149611cbbb577f63734b9df720d6f68740f048c9d"
     },
     {
+      "path": "supplement/extended_validation/provenance/projection_audit.py",
+      "sha256": "253247e6e75223274022b6a770572f0e42f3b4c3d216b27aacaba2af52cae9d4"
+    },
+    {
       "path": "supplement/extended_validation/provenance/tests/test_parser.py",
       "sha256": "f021c3609aded2cf86bcbb94efd7f7690c1bae5ccbeb14179452d0432a0c1782"
+    },
+    {
+      "path": "supplement/extended_validation/provenance/tests/test_projection.py",
+      "sha256": "5736a46cd9ea9e12975b8d8e9d4a5f0c85f32372b8417347298c8bea731e3d9c"
+    },
+    {
+      "path": "supplement/extended_validation/provenance/verify_selected.py",
+      "sha256": "f1726293c4b9bd2ca8d8d94426bddffc24881c566e8a999e2fc3c064638bd868"
+    },
+    {
+      "path": "supplement/extended_validation/reproduce_trace.py",
+      "sha256": "6a49b4e6b580608d34033712e09165e45eb7498a1ad8db710d2e96f6caf1f737"
+    },
+    {
+      "path": "supplement/extended_validation/run_trace_fixture_tests.py",
+      "sha256": "9910cea6bef0411107eddbb00a865474677e915726ce3f4346ff40b04de520e8"
     },
     {
       "path": "supplement/extended_validation/scenarios/AMENDMENTS.md",
@@ -204,6 +236,46 @@
     {
       "path": "supplement/extended_validation/search/tests.py",
       "sha256": "1f5262b38ed025260dd46df82fd74a288505fb4a4f5e127dfad2c59dae423a40"
+    },
+    {
+      "path": "supplement/extended_validation/tests_public_trace_entry.py",
+      "sha256": "941b33a61411ee5736ae8bacd1baf614f7f56134aab58e1533f9393178f08851"
+    },
+    {
+      "path": "supplement/extended_validation/trace/AMENDMENT_DRAFT.md",
+      "sha256": "fca98d92234713a35bf3577215e4db28ada191586beea9d0d1e3609bbc964265"
+    },
+    {
+      "path": "supplement/extended_validation/trace/PLAN.md",
+      "sha256": "0ec40662bc1d49aa88db6f5ee262652a889b5b2106425e5d8fcc75243af8607c"
+    },
+    {
+      "path": "supplement/extended_validation/trace/campaign.py",
+      "sha256": "fb04db4f2d3d7d8759a0f3316c3949593643a81008268d48eb5b30e00de5177e"
+    },
+    {
+      "path": "supplement/extended_validation/trace/config.json",
+      "sha256": "b70222b41103789c01ac9385e3dbd9f0edd12b08474b6ac1dfb3b628690bb9d0"
+    },
+    {
+      "path": "supplement/extended_validation/trace/engine.py",
+      "sha256": "0349cead3a055d3a6a34f2a0635d0ba0ae18a9589be635ecbd5147d8efed4a7a"
+    },
+    {
+      "path": "supplement/extended_validation/trace/report.py",
+      "sha256": "44d25731f16212ab1c27e3749d1e0241befcb185effe0c9e28991e1f25d3049a"
+    },
+    {
+      "path": "supplement/extended_validation/trace/supervisor.py",
+      "sha256": "83b50ce81c25d64e7333893e2f054934484087e7852de44d2298d8d90c0b3431"
+    },
+    {
+      "path": "supplement/extended_validation/trace/tests.py",
+      "sha256": "49703c37a3490e44864d9539357ce4a146b0ca7b35c27541f9af3fde87fb25dc"
+    },
+    {
+      "path": "supplement/extended_validation/trace_parameters_20261109.json",
+      "sha256": "a034ab7f846d57889fefe5afbe7ea62b634507bff5b7ad285de6f34d11268c98"
     },
     {
       "path": "supplement/mqhoa_supp/__init__.py",
@@ -286,5 +358,5 @@
       "sha256": "e07ce67be661950584ff0635b4862962e92c8ad8f5b4988cd8bb8fe97b86b694"
     }
   ],
-  "excluded": "manuscripts, raw inputs/results, virtual environments, report-writing prose template"
+  "excluded": "manuscripts; raw archive/CSV/SQLite; task input vectors; complete node-level run logs; virtual environments; private evidence ZIP"
 }
