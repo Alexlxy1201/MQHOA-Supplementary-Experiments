@@ -1,0 +1,18 @@
+{
+ "id":"search-validation-20261109-v1",
+ "seeds":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+ "budget_endpoints":[500,1000,2500,5000,10000],
+ "prefix_check_seeds":[0],
+ "methods_budget":["MQHOA","PSO","GA"],
+ "arms":["SamePoolRelabeledMQHOA","DirectGeometryMQHOA"],
+ "relabel_seed_base":2026110900,
+ "bootstrap_seed":20261109,
+ "bootstrap_samples":10000,
+ "solver_time_limit_s":120,
+ "solver_workers":1,
+ "solver_scale":100,
+ "timing_workers":1,
+ "timing_seed":202611091,
+ "timing_repeats":3,
+ "workers":2
+}

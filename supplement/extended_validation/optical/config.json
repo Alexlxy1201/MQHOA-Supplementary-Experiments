@@ -1,0 +1,30 @@
+{
+  "protocol": "measured-angular-spectrum-v1",
+  "workloads": [
+    {"id": "asm256-p3", "n": 256, "planes": 3},
+    {"id": "asm512-p5", "n": 512, "planes": 5},
+    {"id": "asm1024-p8", "n": 1024, "planes": 8}
+  ],
+  "wavelength_m": 0.000000532,
+  "pixel_pitch_m": 0.000008,
+  "distance_step_m": 0.003,
+  "padding_factor": 2,
+  "dtype": "complex128",
+  "profile_warmups": 2,
+  "profile_repetitions": 7,
+  "network_repetitions": 3,
+  "relative_l2_tolerance": 0.00000001,
+  "absolute_tolerance": 0.00000001,
+  "budget_evals": 10000,
+  "seeds": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+  "mqhoa": {"k": 4, "m": 5, "lambda": 1.3},
+  "pso": {"population": 20, "inertia": 0.7, "c1": 2.0, "c2": 2.0, "velocity_fraction": 0.2},
+  "pool_small": 2000,
+  "pool_large": 20000,
+  "large_pool_threshold": 50,
+  "pool_seed_base": 781300,
+  "bootstrap_seed": 20261109,
+  "bootstrap_samples": 10000,
+  "end_to_end_methods": ["MQHOA", "PSO", "HEFT", "FlexDO-N2"],
+  "end_to_end_seed": 0
+}

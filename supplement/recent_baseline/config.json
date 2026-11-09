@@ -1,0 +1,18 @@
+{
+  "protocol": "flexdo-supplement-v1",
+  "primary_variant": "N2",
+  "variants": ["0", "N", "N2"],
+  "budget_evals_cap": 10000,
+  "reproduction_seeds": [0, 1, 2, 3, 4],
+  "timing_repeats_per_flexdo_variant": 10,
+  "timing_mqhoa_seeds": [0, 1, 2, 3, 4],
+  "timing_cpu_index": 2,
+  "timing_host": "DESKTOP-U6ORVRO",
+  "warmup_seconds": 60,
+  "stability_ratio_limit": 1.5,
+  "shuffle_seed": 20261108,
+  "bootstrap_seed": 20261109,
+  "bootstrap_samples": 10000,
+  "estimated_timing_runs": 490,
+  "old_comparison_family_preserved": true
+}
