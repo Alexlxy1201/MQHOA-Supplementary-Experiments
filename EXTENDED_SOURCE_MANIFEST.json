@@ -130,16 +130,20 @@
       "sha256": "1fe821c0d3fda25996ba44685a2a2247ae06b9d2387f7c7e86548ee7929fef01"
     },
     {
+      "path": "supplement/extended_validation/provenance/AMENDMENTS.md",
+      "sha256": "e423b5190f31fbeaee196ef4219e50bc0b494e6e8ed97935fa37bf7ecb65dfaa"
+    },
+    {
       "path": "supplement/extended_validation/provenance/PROTOCOL.md",
       "sha256": "0cd4e4687fab89680e791f0dc54af8c1e3248f61327f68ab653184ee1e13dad3"
     },
     {
       "path": "supplement/extended_validation/provenance/parser.py",
-      "sha256": "90fc0df4134b93a96795f4c8073f29acb53832d87f3bfb98fff5975e02b6f4db"
+      "sha256": "471a8731ea9dcb5c0512b1c149611cbbb577f63734b9df720d6f68740f048c9d"
     },
     {
       "path": "supplement/extended_validation/provenance/tests/test_parser.py",
-      "sha256": "5852090508e74d2040739b9d1b8cca685c2b9b414aa3836f3f57808497aad772"
+      "sha256": "f021c3609aded2cf86bcbb94efd7f7690c1bae5ccbeb14179452d0432a0c1782"
     },
     {
       "path": "supplement/extended_validation/scenarios/AMENDMENTS.md",

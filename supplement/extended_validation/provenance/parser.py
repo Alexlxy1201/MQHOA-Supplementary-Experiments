@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import sqlite3
 import tarfile
+from urllib.parse import quote
 from zipfile import ZipFile
 
 OFFICIAL_SHA256 = '7c4b32361bd1ec2083647a8f52a6854a03bc125ca5c202652316c499fbf978c6'
@@ -229,11 +230,13 @@ def extract(local, out, repo, allow_nonofficial_csv=False):
         tl = [spans[name] for name in g['names']]
         ts = [x / 3 for x in tl]
         delay = sum((a + b) / 2 for a, b in zip(tl, ts)) / n
-        identifier = 'trace-' + cell + '-' + job
+        identifier = 'trace-' + cell + '-' + quote(job, safe='-_')
         data = {'identifier': identifier, 'tl': tl, 'ts': ts,
                 'edges': [(a, b, delay) for a, b in g['edges']],
                 'pinned': sorted(set(g['sources'] + g['sinks'])),
-                'metadata': {'kind': 'new-trace-derived', 'job_name': job, 'original_task_names': g['names'],
+                'metadata': {'kind': 'new-trace-derived' if is_tar else 'unverified-local-csv',
+                             'official_archive_verified': is_tar,
+                             'job_name': job, 'original_task_names': g['names'],
                              'duration_source': 'mean positive observed batch-task wall span (seconds)',
                              'resource_speedup': 3, 'speedup_is_synthetic': True,
                              'communication_is_synthetic': True, 'ccr': 1,
@@ -252,8 +255,13 @@ def extract(local, out, repo, allow_nonofficial_csv=False):
         rows.append((name, count, total, valid))
     process(current, rows)
     db.close()
+    selected_counts = {cell: selected[cell] for cell in ('small', 'medium', 'large')}
     report = {'source_sha256': checksum, 'official_sha256_verified': is_tar,
-              'funnel': dict(funnel), 'selected_counts': dict(selected), 'instances': exported,
+              'funnel': dict(funnel), 'selected_counts': selected_counts,
+              'planned_counts': {cell: 10 for cell in selected_counts},
+              'missing_counts': {cell: 10 - count for cell, count in selected_counts.items()},
+              'selection_complete': all(count == 10 for count in selected_counts.values()),
+              'instances': exported,
               'archived_topology_candidates': matches,
               'historical_job_or_timing_provenance_recovered': False}
     (out / 'extraction_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
